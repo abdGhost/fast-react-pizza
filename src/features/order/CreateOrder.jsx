@@ -41,7 +41,6 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    
     <div>
       <h2>{`Ready to order? Let's go!`}</h2>
 
@@ -79,7 +78,10 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button
+            disabled={isSubmitting}
+            className="bg-yellow-400 uppercase font-semibold text-stone-800 py-3 px-4 inline-block tracking-wide rounded-full hover:bg-yellow-300 translate-colors duration-300 focus:outline-none focus-ring focus:ring-yellow-300 focus:bg-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed"
+          >
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>
         </div>
